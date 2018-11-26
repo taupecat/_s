@@ -29,7 +29,10 @@ add_action( 'after_setup_theme', '_s_woocommerce_setup' );
  * @return void
  */
 function _s_woocommerce_scripts() {
-	wp_enqueue_style( '_s-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
+
+	$version = bloginfo( 'version' );
+
+	wp_enqueue_style( '_s-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), $version );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -175,9 +178,12 @@ if ( ! function_exists( '_s_woocommerce_wrapper_after' ) ) {
 	 * @return void
 	 */
 	function _s_woocommerce_wrapper_after() {
-			?>
-			</main><!-- #main -->
-		</div><!-- #primary -->
+		?>
+			</main>
+			<!-- #main -->
+
+		</div>
+		<!-- #primary -->
 		<?php
 	}
 }

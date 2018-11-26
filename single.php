@@ -7,10 +7,16 @@
  * @package _s
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+
+	exit();
+}
+
 get_header();
 ?>
 
 	<div id="primary" class="content-area">
+
 		<main id="main" class="site-main">
 
 		<?php
@@ -29,8 +35,11 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+		<!-- #main -->
+
+	</div>
+	<!-- #primary -->
 
 <?php
 get_sidebar();
